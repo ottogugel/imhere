@@ -2,11 +2,14 @@ import { View, Text, TextInput, TouchableOpacity, FlatList, Alert } from 'react-
 import React, { useState } from 'react';
 import { styles } from './styles'
 import { Participant } from '../components/Participant'
+import moment from 'moment';
 
 export function Home() {
-  const day = new Date().getDate(); //Para obter o dia
+
+  const day = moment().format('dddd');   // Para obter o dia em texto
+  const dayNumber = new Date().getDate(); //Para obter o dia em número
   const year = new Date().getFullYear(); //Para obter o ano
-  // const month = new Date.().get
+  const month = moment().format('MMMM') // Para obter o mês
 
   const [participants, setParticipants] = useState<string[]>([]);
   const [participantName, setParticipantName] = useState("");
@@ -14,8 +17,8 @@ export function Home() {
   function handleParticipantAdd() {
     if (participants.includes(participantName)) {
       return Alert.alert(
-        "Participante Existe",
-        "Já existe um participante na lista com esse nome"
+        "Participant exists",
+        "There is already a participant on the list with that name"
       );
     }
 
@@ -24,7 +27,7 @@ export function Home() {
   }
 
   function handleParticipantRemove(name: string) {
-    Alert.alert("Remover", `Remover o participante ${name}?`, [
+    Alert.alert("Delete", `Remove the participant ${name}?`, [
       {
         text: "Sim",
         onPress: () =>
@@ -44,7 +47,7 @@ export function Home() {
     <View style={styles.container}>
       <Text style={styles.eventName}>New Event</Text>
       <Text style={styles.eventDate}>
-        Wednesday, December {day}, {year}
+        {day}, {month} {dayNumber}, {year}
       </Text>
 
       <View style={styles.form}>

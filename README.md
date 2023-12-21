@@ -7,6 +7,7 @@ A aplicação para em breve...
 - React Native
 - Typescript
 - Expo
+- React Navigation
 - And more...
 
 ## Funcionalidades

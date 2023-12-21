@@ -29,14 +29,14 @@ export function NewEvent() {
   function handleParticipantRemove(name: string) {
     Alert.alert("Delete", `Remove the participant ${name}?`, [
       {
-        text: "Sim",
+        text: "Yes",
         onPress: () =>
           setParticipants((prevState) =>
             prevState.filter((participant) => participant !== name)
           ),
       },
       {
-        text: "Não",
+        text: "No",
         style: "cancel",
       },
     ]);

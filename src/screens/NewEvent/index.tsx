@@ -1,10 +1,10 @@
 import { View, Text, TextInput, TouchableOpacity, FlatList, Alert } from 'react-native'
 import React, { useState } from 'react';
 import { styles } from './styles'
-import { Participant } from '../components/Participant'
+import { Participant } from '../../components/Participant'
 import moment from 'moment';
 
-export function Home() {
+export function NewEvent() {
 
   const day = moment().format('dddd');   // Para obter o dia em texto
   const dayNumber = new Date().getDate(); //Para obter o dia em número

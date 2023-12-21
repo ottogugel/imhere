@@ -3,7 +3,7 @@ A aplicação para em breve...
 
 ## Stack
 
-- Moment Js
+- Moment Js [https://momentjs.com/]
 - React Native
 - Typescript
 - Expo
